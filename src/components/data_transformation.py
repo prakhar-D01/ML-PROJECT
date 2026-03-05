@@ -11,7 +11,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from src.exception import CustomException
 from src.logger import logging
 
-from src.utils import save_path
+from src.utils import save_object
 
 @dataclass
 class DataTransformerConfig:
@@ -89,7 +89,7 @@ class DataTransformation:
             ]
             logging.info("Saved preprocessing obj")
 
-            save_path(
+            save_object(
                 file_path= self.data_transformation.preprocessor_obj_file_path,
                 obj= preprocessing_obj
             )
